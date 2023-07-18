@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Windows">
+      <UniqueIdentifier>{fc34fa6f-579b-48bc-aefd-64bd07101f1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Resource">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Windows\Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{f45cf990-4874-4737-94b3-b91579903ae7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents">
+      <UniqueIdentifier>{43f48c3d-73b4-4ec5-855b-ab1ac6a3b230}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Common">
+      <UniqueIdentifier>{a59edb8e-0397-4dc7-ba9d-e5234675e53e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Common\Time">
+      <UniqueIdentifier>{65de4a61-7112-45db-bd91-f10cd372fc3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\High Level Interface">
+      <UniqueIdentifier>{7d30e52f-fe96-4397-a734-fb24fc771d26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Input">
+      <UniqueIdentifier>{1696998d-8d21-4dc0-a2be-8a04a5672ae2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Entity">
+      <UniqueIdentifier>{4af35c5d-3c6a-4f5b-be8e-d00a94c907dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Layer">
+      <UniqueIdentifier>{06d6f228-8b9c-4e22-b5a9-aff512ae6df4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Component">
+      <UniqueIdentifier>{0cbcc153-44cd-4eb0-b7cf-d710b6292a5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Component\Transform">
+      <UniqueIdentifier>{aed84adb-e132-4128-9586-b66aca555b61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Resource">
+      <UniqueIdentifier>{9026465e-5fb0-4154-a6dc-e82cefb1a723}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Resource\Image">
+      <UniqueIdentifier>{88d33261-31dc-4063-9aca-4decf55bfb00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Scene">
+      <UniqueIdentifier>{501035ef-2c63-4ca7-86b4-0034d11c4c4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\GameObject">
+      <UniqueIdentifier>{c16a3e8a-9ca9-4b26-855e-506478c6203c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\GameObject\BackGround">
+      <UniqueIdentifier>{2bd44036-2a8f-4be8-9256-6496a4ae38fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\GameObject\Player">
+      <UniqueIdentifier>{cb9e0a85-9bea-41c7-8e50-1fb911de64a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\Scene">
+      <UniqueIdentifier>{978bf841-aa0f-4801-ab13-f84e0273ca4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject">
+      <UniqueIdentifier>{1b09c720-c95e-4205-acde-2dc6acb0d7d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Component\Animator">
+      <UniqueIdentifier>{aa524280-4160-44ee-97b7-cc945faad44c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Camera">
+      <UniqueIdentifier>{60fadd21-da2f-418d-89f4-575901ac500e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Resource\Animation">
+      <UniqueIdentifier>{71fe66f1-4215-492f-957e-871492fb7f76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\GameObject\Enemy">
+      <UniqueIdentifier>{7b97229b-48c0-47dd-b375-3621990655d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\GameObject\Cursor">
+      <UniqueIdentifier>{89110cc8-a46d-449c-a447-fdc40daf45aa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="BB_CF.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="BBTime.h">
+      <Filter>Engine\Common\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonInclude.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="BBMath.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="BBApplication.h">
+      <Filter>Engine\High Level Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="BBInput.h">
+      <Filter>Engine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="BBSceneManager.h">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="BBScene.h">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="BBEntity.h">
+      <Filter>Engine\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="BBComponent.h">
+      <Filter>Engine\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="BBGameObject.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="BBTransform.h">
+      <Filter>Engine\Component\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="BBResource.h">
+      <Filter>Engine\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="BBResources.h">
+      <Filter>Engine\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="BBTexture.h">
+      <Filter>Engine\Resource\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="BBSpriteRenderer.h">
+      <Filter>Engine\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="BBLayer.h">
+      <Filter>Engine\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="BBPlayer.h">
+      <Filter>Contents\GameObject\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="BBBackGround.h">
+      <Filter>Contents\GameObject\BackGround</Filter>
+    </ClInclude>
+    <ClInclude Include="BBTitleScene.h">
+      <Filter>Contents\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="BBCharaterSelectScene.h">
+      <Filter>Contents\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="BBBattleScene.h">
+      <Filter>Contents\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="BBObject.h">
+      <Filter>Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="BBCamera.h">
+      <Filter>Engine\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="BBAnimator.h">
+      <Filter>Engine\Component\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="BBAnimation.h">
+      <Filter>Engine\Resource\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="BBEnemy.h">
+      <Filter>Contents\GameObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="BBCursor.h">
+      <Filter>Contents\GameObject\Cursor</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BB_CF.rc">
+      <Filter>Windows\Resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>Windows\Resource</Filter>
+    </Image>
+    <Image Include="BB_CF.ico">
+      <Filter>Windows\Resource</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BBTime.cpp">
+      <Filter>Engine\Common\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="BBMath.cpp">
+      <Filter>Engine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="BB_CF_Main.cpp" />
+    <ClCompile Include="BBApplication.cpp">
+      <Filter>Engine\High Level Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="BBInput.cpp">
+      <Filter>Engine\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="BBSceneManager.cpp">
+      <Filter>Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="BBScene.cpp">
+      <Filter>Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="BBEntity.cpp">
+      <Filter>Engine\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="BBComponent.cpp">
+      <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="BBGameObject.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="BBTransform.cpp">
+      <Filter>Engine\Component\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="BBResource.cpp">
+      <Filter>Engine\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="BBResources.cpp">
+      <Filter>Engine\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="BBTexture.cpp">
+      <Filter>Engine\Resource\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="BBSpriteRenderer.cpp">
+      <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="BBLayer.cpp">
+      <Filter>Engine\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="BBPlayer.cpp">
+      <Filter>Contents\GameObject\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="BBBackGround.cpp">
+      <Filter>Contents\GameObject\BackGround</Filter>
+    </ClCompile>
+    <ClCompile Include="BBTitleScene.cpp">
+      <Filter>Contents\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="BBCharaterSelectScene.cpp">
+      <Filter>Contents\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="BBBattleScene.cpp">
+      <Filter>Contents\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="BBCamera.cpp">
+      <Filter>Engine\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="BBAnimator.cpp">
+      <Filter>Engine\Component\Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="BBAnimation.cpp">
+      <Filter>Engine\Resource\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="BBEnemy.cpp">
+      <Filter>Contents\GameObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="BBCursor.cpp">
+      <Filter>Contents\GameObject\Cursor</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
