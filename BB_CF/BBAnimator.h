@@ -26,10 +26,13 @@ namespace BB
 		Animation* FindAnimation(const std::wstring& name);
 		void PlayAnimation(const std::wstring& name, bool loop = false);
 
+		bool IsActiveAnimationComplete() { return mActiveAnimation->IsComplete(); }
 		bool GetAffectedCamera() { return mbAffectedCamera; }
 		void SetAffectedCamera(bool enable) { mbAffectedCamera = enable; }
 		float GetAlpha() { return mAlpha; }
 		void SetAlpha(float alpha) { mAlpha = alpha; }
+		Vector2 GetScale() { return mScale; }
+		void SetScale(Vector2 scale) { mScale = scale; }
 
 	private:
 		std::map<std::wstring, Animation*> mAnimations;
@@ -38,5 +41,6 @@ namespace BB
 		bool mbLoop;
 		bool mbAffectedCamera;
 		float mAlpha;
+		Vector2 mScale;
 	};
 }

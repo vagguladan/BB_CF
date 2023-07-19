@@ -6,6 +6,18 @@ namespace BB
 	class Player : public GameObject
 	{
 	public:
+
+		enum class eState
+		{
+			Idle,
+			Move,
+			Attack,
+			Hit,
+			Jump,
+			End,
+		};
+
+
 		Player();
 		virtual ~Player();
 
@@ -13,7 +25,15 @@ namespace BB
 		virtual void Update() override;
 		virtual void Render(HDC hdc) override;
 
-	private:
+		void Idle();
+		void Move();
+		void Attack();
+		void Hit();
+		void Jump();
 
+	private:
+		eState mState;
 	};
+	
+
 }

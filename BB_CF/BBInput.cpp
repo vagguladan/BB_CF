@@ -10,6 +10,7 @@ namespace BB
 		'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
 		'Z', 'X', 'C', 'V', 'B', 'N', 'M', 
 		VK_UP, VK_DOWN, VK_LEFT, VK_RIGHT,
+		VK_NUMPAD1,VK_NUMPAD2,VK_NUMPAD4,VK_NUMPAD5,
 	};
 
 	void Input::Initailize()

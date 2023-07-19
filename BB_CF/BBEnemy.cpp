@@ -8,6 +8,7 @@ namespace BB
 {
 
 	Enemy::Enemy()
+		: mState(eState::Idle)
 	{
 	}
 
@@ -22,7 +23,7 @@ namespace BB
 	void Enemy::Update()
 	{
 		GameObject::Update();
-
+/*
 		Transform* tr = GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition();
 		Animator* anim = GetComponent<Animator>();
@@ -63,12 +64,138 @@ namespace BB
 		if (Input::GetKeyUp(eKeyCode::L))
 			anim->PlayAnimation(L"Enemy", true);
 
-		tr->SetPosition(pos);
+		tr->SetPosition(pos); */
+
+		switch (mState)
+		{
+		case BB::Enemy::eState::Idle:
+			Idle();
+			break;
+		case BB::Enemy::eState::Move:
+			Move();
+			break;
+		case BB::Enemy::eState::Attack:
+			Attack();
+			break;
+		case BB::Enemy::eState::Hit:
+			Hit();
+			break;
+		case BB::Enemy::eState::End:
+			break;
+		default:
+			break;
+		}
+
 	}
 
 	void Enemy::Render(HDC hdc)
 	{
 		GameObject::Render(hdc);
+	}
+
+	void Enemy::Idle()
+	{
+		Animator* animator = GetComponent<Animator>();
+		if (Input::GetKey(eKeyCode::Up))
+		{
+			animator->PlayAnimation(L"JumpMove", false);
+			mState = eState::Move;
+		}
+		if (Input::GetKey(eKeyCode::Right))
+		{
+			animator->PlayAnimation(L"FrontMoveE", true);
+			mState = eState::Move;
+		}
+		if (Input::GetKey(eKeyCode::Down))
+		{
+			animator->PlayAnimation(L"DownMoveE", true);
+			mState = eState::Move;
+		}
+		if (Input::GetKey(eKeyCode::Left))
+		{
+			animator->PlayAnimation(L"BackMoveE", true);
+			mState = eState::Move;
+		}
+
+		if (Input::GetKey(eKeyCode::NUM1))
+		{
+			animator->PlayAnimation(L"AAttack", false);
+			mState = eState::Attack;
+		}
+
+		if (Input::GetKey(eKeyCode::NUM2))
+		{
+			animator->PlayAnimation(L"BAttackS", false);
+			mState = eState::Attack;
+		}
+		if (Input::GetKey(eKeyCode::NUM3))
+		{
+			animator->PlayAnimation(L"CAttack", false);
+			mState = eState::Attack;
+		}
+		if (Input::GetKey(eKeyCode::NUM4))
+		{
+			animator->PlayAnimation(L"DAttack", false);
+			mState = eState::Attack;
+		}
+	}
+	
+	
+
+	void Enemy::Move()
+	{
+		Transform* tr = GetComponent<Transform>();
+		Vector2 pos = tr->GetPosition();
+
+		if (Input::GetKey(eKeyCode::Up))
+		{
+			pos.y -= 300.0f * Time::DeltaTime();
+
+		}
+
+		if (Input::GetKey(eKeyCode::Left))
+		{
+			pos.x -= 300.0f * Time::DeltaTime();
+		}
+		if (Input::GetKey(eKeyCode::Down))
+		{
+			if (pos.y < 480.0f)
+				pos.y += 300.0f * Time::DeltaTime();
+		}
+		if (Input::GetKey(eKeyCode::Right))
+		{
+			pos.x += 300.0f * Time::DeltaTime();
+		}
+		tr->SetPosition(pos);
+
+		if (Input::GetKeyUp(eKeyCode::Up)
+			|| Input::GetKeyUp(eKeyCode::Left)
+			|| Input::GetKeyUp(eKeyCode::Right)
+			|| Input::GetKeyUp(eKeyCode::Down))
+		{
+			Animator* animator = GetComponent<Animator>();
+			animator->PlayAnimation(L"EnemyIdle", true);
+			mState = eState::Idle;
+		}
+	}
+
+	void Enemy::Attack()
+	{
+
+		Animator* animator = GetComponent<Animator>();
+		if (animator->IsActiveAnimationComplete())
+		{
+			animator->PlayAnimation(L"EnemyIdle", true);
+			mState = eState::Idle;
+		}
+	}
+
+	void Enemy::Hit()
+	{
+	}
+
+	void Enemy::Jump()
+	{
 	}
 
 }
