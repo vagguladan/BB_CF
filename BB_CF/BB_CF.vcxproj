@@ -128,6 +128,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BBCollider.h" />
+    <ClInclude Include="BBCollisionManager.h" />
     <ClInclude Include="BBCursor.h" />
     <ClInclude Include="BBEnemy.h" />
     <ClInclude Include="BBAnimation.h" />
@@ -161,6 +163,8 @@
     <ClInclude Include="BBObject.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BBCollider.cpp" />
+    <ClCompile Include="BBCollisionManager.cpp" />
     <ClCompile Include="BBCursor.cpp" />
     <ClCompile Include="BBEnemy.cpp" />
     <ClCompile Include="BBAnimation.cpp" />

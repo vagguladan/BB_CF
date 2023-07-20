@@ -12,6 +12,8 @@
 #include "BBCamera.h"
 #include "BBAnimator.h"
 #include "BBEnemy.h"
+#include "BBCollisionManager.h"
+#include "BBCollider.h"
 
 namespace BB
 {
@@ -47,11 +49,9 @@ namespace BB
 
 		Player* player = object::Instantiate<Player>(eLayerType::Player);
 		Transform* tr = player->GetComponent<Transform>();
-		tr->SetPosition(Vector2(1100.0f, 500.0f));
+		tr->SetPosition(Vector2(900.0f, 490.0f));
 
-		Enemy* Em = object::Instantiate<Enemy>(eLayerType::Enemy);
-		Transform* tr2 = Em->GetComponent<Transform>();
-		tr2->SetPosition(Vector2(400.0f, 500.0f));
+	
 
 		//SpriteRenderer* sr = player->AddComponent<SpriteRenderer>();
 		//sr->SetImage(image);
@@ -79,34 +79,41 @@ namespace BB
 		//ES 무브셋.
 
 		Animator* at = player->AddComponent<Animator>();
-		at->CreateAnimationFolder(L"PlayerIdle", L"..\\Resources\\Image\\Player\\Es\\Standing");
-		at->CreateAnimationFolder(L"JumpMove", L"..\\Resources\\Image\\Player\\Es\\JumpMove");
-		at->CreateAnimationFolder(L"FrontMove", L"..\\Resources\\Image\\Player\\Es\\FrontMove");
-		at->CreateAnimationFolder(L"BackMove", L"..\\Resources\\Image\\Player\\Es\\BackMove");
-		at->CreateAnimationFolder(L"DownMove", L"..\\Resources\\Image\\Player\\Es\\DownMove", Vector2(-50.0f, 30.0f));
+		at->CreateAnimationFolder(L"PlayerIdle", L"..\\Resources\\Image\\Player\\Es\\Standing",Vector2(200.0f,0.0f));
+		at->CreateAnimationFolder(L"JumpMove", L"..\\Resources\\Image\\Player\\Es\\JumpMove", Vector2(150.0f, 30.0f));
+		at->CreateAnimationFolder(L"FrontMove", L"..\\Resources\\Image\\Player\\Es\\FrontMove", Vector2(150.0f, 0.0f));
+		at->CreateAnimationFolder(L"BackMove", L"..\\Resources\\Image\\Player\\Es\\BackMove", Vector2(150.0f, 0.0f));
+		at->CreateAnimationFolder(L"DownMove", L"..\\Resources\\Image\\Player\\Es\\DownMove", Vector2(150.0f, 30.0f));
 
-		at->CreateAnimationFolder(L"AAttack", L"..\\Resources\\Image\\Player\\Es\\AAttack", Vector2(0.0f, 0.0f), 0.05f);
-		at->CreateAnimationFolder(L"BAttack", L"..\\Resources\\Image\\Player\\Es\\BAttack", Vector2(0.0f, 0.0f), 0.05f);
-		at->CreateAnimationFolder(L"CAttack", L"..\\Resources\\Image\\Player\\Es\\CAttack", Vector2(0.0f, 0.0f), 0.05f);
-		at->CreateAnimationFolder(L"DAttack", L"..\\Resources\\Image\\Player\\Es\\DAttack", Vector2(0.0f, 0.0f), 0.05f);
+		at->CreateAnimationFolder(L"AAttack", L"..\\Resources\\Image\\Player\\Es\\AAttack", Vector2(150.0f, 0.0f), 0.05f);
+		at->CreateAnimationFolder(L"BAttack", L"..\\Resources\\Image\\Player\\Es\\BAttack", Vector2(150.0f, 0.0f), 0.05f);
+		at->CreateAnimationFolder(L"CAttack", L"..\\Resources\\Image\\Player\\Es\\CAttack", Vector2(150.0f, 0.0f), 0.05f);
+		at->CreateAnimationFolder(L"DAttack", L"..\\Resources\\Image\\Player\\Es\\DAttack", Vector2(150.0f, 0.0f), 0.05f);
 
-		Texture* Battack = Resources::Load<Texture>(L"BAttackSheet"
+
+
+
+		Texture* Battack = Resources::Load<Texture>(L"BAttackS"
 			, L"..\\Resources\\Image\\Player\\Es\\Battacksheet\\Battack.bmp");
-
-
-
-		at->CreateAnimation(L"BAttackS", Battack, Vector2(0.0f, 0.0f), Vector2(600.0f, 800.0f), 11, Vector2(0.0f, 0.0f), 0.05f);
+		at->CreateAnimation(L"BAttackS", Battack, Vector2(0.0f, 0.0f), Vector2(600.0f, 800.0f), 11, Vector2(130.0f, 0.00f), 0.05f);
 
 
 		at->PlayAnimation(L"PlayerIdle", true);
 		at->SetAffectedCamera(true);
 
 
-
+		Collider * col = player->AddComponent<Collider>();
+		col->SetSize(Vector2(-200.0f, 350.0f));
+		
 
 		//Bullet 무브셋.%
+
+		Enemy* Em = object::Instantiate<Enemy>(eLayerType::Enemy);
+		Transform* tr2 = Em->GetComponent<Transform>();
+		tr2->SetPosition(Vector2(400.0f, 500.0f));
+
 		Animator* at2 = Em->AddComponent<Animator>();
-		at2->CreateAnimationFolder(L"EnemyIdle", L"..\\Resources\\Image\\Player\\Bullet\\Standing");
+		at2->CreateAnimationFolder(L"EnemyIdle", L"..\\Resources\\Image\\Player\\Bullet\\Standing",Vector2(50.f,0.0f));
 		at2->CreateAnimationFolder(L"BackMoveE", L"..\\Resources\\Image\\Player\\Bullet\\BackMove");
 		at2->CreateAnimationFolder(L"FrontMoveE", L"..\\Resources\\Image\\Player\\Bullet\\FrontMove");
 		at2->CreateAnimationFolder(L"DownMoveE", L"..\\Resources\\Image\\Player\\Bullet\\DownMove", Vector2(0.0f, 50.0f));
@@ -120,6 +127,11 @@ namespace BB
 
 		at2->CreateAnimationFolder(L"DAAttackE", L"..\\Resources\\Image\\Player\\Bullet\\DAAttack",Vector2(0.0f, 10.0f), 0.02f);
 
+		col = Em->AddComponent<Collider>();
+		col->SetSize(Vector2(-270.0f, 340.0f));
+
+
+		CollisionManager::CollisionLayerCheck(eLayerType::Player, eLayerType::Enemy, true);
 
 		//Animator* at = player->AddComponent<Animator>();
 		//at->CreateAnimationFolder(L"PlayerMove", L"..\\Resources\\Image\\Player\\Move");

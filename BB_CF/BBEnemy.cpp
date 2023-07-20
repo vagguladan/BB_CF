@@ -93,6 +93,18 @@ namespace BB
 		GameObject::Render(hdc);
 	}
 
+	void Enemy::OnCollisionEnter(Collider* other)
+	{
+	}
+
+	void Enemy::OnCollisionStay(Collider* other)
+	{
+	}
+
+	void Enemy::OnCollisionExit(Collider* other)
+	{
+	}
+
 	void Enemy::Idle()
 	{
 		Animator* animator = GetComponent<Animator>();
@@ -109,7 +121,7 @@ namespace BB
 		if (Input::GetKey(eKeyCode::Down))
 		{
 			animator->PlayAnimation(L"DownMoveE", true);
-			mState = eState::Sit;
+			mState = eState::Move;
 		}
 		if (Input::GetKey(eKeyCode::Left))
 		{

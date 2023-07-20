@@ -6,6 +6,7 @@
 #include <functional>
 #include <string>
 #include <filesystem>
+#include <bitset>
 
 #include "framework.h"
 #include "BBMath.h"
@@ -32,6 +33,7 @@ namespace BB::enums
 		SpriteRenderer,
 		Animation,
 		Animator,
+		Collider,
 		End,
 	};
 

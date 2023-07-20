@@ -25,9 +25,9 @@ namespace BB
 		GameObject::Update();
 		SpriteRenderer* sr = GetComponent<SpriteRenderer>();
 
-		float alpha = sr->GetAlpha();
+	/*	float alpha = sr->GetAlpha();
 		alpha -= 0.2f * Time::DeltaTime();
-		sr->SetAlpha(alpha);
+		sr->SetAlpha(alpha);*/
 	}
 
 	void BackGround::Render(HDC hdc)

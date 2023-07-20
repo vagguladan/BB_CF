@@ -133,6 +133,18 @@ namespace BB
 		GameObject::Render(hdc);
 	}
 
+	void Player::OnCollisionEnter(Collider* other)
+	{
+	}
+
+	void Player::OnCollisionStay(Collider* other)
+	{
+	}
+
+	void Player::OnCollisionExit(Collider* other)
+	{
+	}
+
 	void Player::Idle()
 	{
 
@@ -220,7 +232,6 @@ namespace BB
 
 	void Player::Attack()
 	{
-		// 농작물에 물을 주는 로직이 추가가된다.
 		Animator* animator = GetComponent<Animator>();
 		if (animator->IsActiveAnimationComplete())
 		{
@@ -235,11 +246,6 @@ namespace BB
 
 	void Player::Jump()
 	{
-		Transform* tr = GetComponent<Transform>();
-		Vector2 pos = tr->GetPosition();
-	
-
-	
 	}
 
 }

@@ -4,6 +4,8 @@
 #include "BBTitleScene.h"
 #include "BBSceneManager.h"
 #include "BBCamera.h"
+#include "BBCollider.h"
+#include "BBCollisionManager.h"
 
 namespace BB
 {
@@ -57,6 +59,7 @@ namespace BB
 		Input::Initailize();
 		Camera::Initalize();
 
+		CollisionManager::Initialize();
 		SceneManager::Initialize();
 	}
 
@@ -72,6 +75,7 @@ namespace BB
 		Input::Update();
 		Camera::Update();
 
+		CollisionManager::Update();
 		SceneManager::Update();
 	}
 
@@ -85,10 +89,10 @@ namespace BB
 
 		Time::Render(mBackHdc);
 
+		CollisionManager::Render(mBackHdc);
 		SceneManager::Render(mBackHdc);
-		//Rectangle(mHdc, 100, 100, 200, 200);
-		//Ellipse(mBackHdc, 100 + mPlayerPos.x, 100 + mPlayerPos.y
-		//	, 200 + mPlayerPos.x, 200 + mPlayerPos.y);
+
+
 		BitBlt(mHdc, 0, 0, mWidth, mHeight
 			, mBackHdc, 0, 0, SRCCOPY);
 	}
