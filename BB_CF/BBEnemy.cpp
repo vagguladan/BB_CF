@@ -109,7 +109,7 @@ namespace BB
 		if (Input::GetKey(eKeyCode::Down))
 		{
 			animator->PlayAnimation(L"DownMoveE", true);
-			mState = eState::Move;
+			mState = eState::Sit;
 		}
 		if (Input::GetKey(eKeyCode::Left))
 		{
@@ -119,23 +119,23 @@ namespace BB
 
 		if (Input::GetKey(eKeyCode::NUM1))
 		{
-			animator->PlayAnimation(L"AAttack", false);
+			animator->PlayAnimation(L"AAttackE", false);
 			mState = eState::Attack;
 		}
 
 		if (Input::GetKey(eKeyCode::NUM2))
 		{
-			animator->PlayAnimation(L"BAttackS", false);
+			animator->PlayAnimation(L"BAttackE", false);
 			mState = eState::Attack;
 		}
 		if (Input::GetKey(eKeyCode::NUM3))
 		{
-			animator->PlayAnimation(L"CAttack", false);
+			animator->PlayAnimation(L"CAttackE", false);
 			mState = eState::Attack;
 		}
 		if (Input::GetKey(eKeyCode::NUM4))
 		{
-			animator->PlayAnimation(L"DAttack", false);
+			animator->PlayAnimation(L"DAttackE", false);
 			mState = eState::Attack;
 		}
 	}
@@ -146,6 +146,7 @@ namespace BB
 	{
 		Transform* tr = GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition();
+		Animator* animator = GetComponent<Animator>();
 
 		if (Input::GetKey(eKeyCode::Up))
 		{
@@ -177,6 +178,29 @@ namespace BB
 			animator->PlayAnimation(L"EnemyIdle", true);
 			mState = eState::Idle;
 		}
+
+		if (Input::GetKey(eKeyCode::NUM1))
+		{
+			animator->PlayAnimation(L"AAttackE", false);
+			mState = eState::Attack;
+		}
+
+		if (Input::GetKey(eKeyCode::NUM2))
+		{
+			animator->PlayAnimation(L"BAttackE", false);
+			mState = eState::Attack;
+		}
+		if (Input::GetKey(eKeyCode::NUM3))
+		{
+			animator->PlayAnimation(L"CAttackE", false);
+			mState = eState::Attack;
+		}
+		if (Input::GetKey(eKeyCode::NUM4))
+		{
+			animator->PlayAnimation(L"DAttackE", false);
+			mState = eState::Attack;
+		}
+
 	}
 
 	void Enemy::Attack()
@@ -196,6 +220,42 @@ namespace BB
 
 	void Enemy::Jump()
 	{
+	}
+
+	void Enemy::Sit()
+	{
+		/*Transform* tr = GetComponent<Transform>();
+		Vector2 pos = tr->GetPosition();
+		Animator* animator = GetComponent<Animator>();
+
+		if (Input::GetKeyUp(eKeyCode::Down))
+		{
+			animator->PlayAnimation(L"EnemyIdle", true);
+			mState = eState::Idle;
+		}
+
+		if (Input::GetKey(eKeyCode::NUM1))
+		{
+			animator->PlayAnimation(L"DAAttackE", false);
+			mState = eState::Attack;
+		}
+
+		if (Input::GetKey(eKeyCode::NUM2))
+		{
+			animator->PlayAnimation(L"DBAttackE", false);
+			mState = eState::Attack;
+		}
+		if (Input::GetKey(eKeyCode::NUM3))
+		{
+			animator->PlayAnimation(L"DCAttackE", false);
+			mState = eState::Attack;
+		}
+		if (Input::GetKey(eKeyCode::NUM4))
+		{
+			animator->PlayAnimation(L"D	DAttackE", false);
+			mState = eState::Attack;
+		}*/
+
 	}
 
 }

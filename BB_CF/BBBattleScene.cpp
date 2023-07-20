@@ -85,17 +85,17 @@ namespace BB
 		at->CreateAnimationFolder(L"BackMove", L"..\\Resources\\Image\\Player\\Es\\BackMove");
 		at->CreateAnimationFolder(L"DownMove", L"..\\Resources\\Image\\Player\\Es\\DownMove", Vector2(-50.0f, 30.0f));
 
-		at->CreateAnimationFolder(L"AAttack", L"..\\Resources\\Image\\Player\\Es\\AAttack", Vector2(0.0f, 0.0f));
-		at->CreateAnimationFolder(L"BAttack", L"..\\Resources\\Image\\Player\\Es\\BAttack");
-		at->CreateAnimationFolder(L"CAttack", L"..\\Resources\\Image\\Player\\Es\\CAttack");
-		at->CreateAnimationFolder(L"DAttack", L"..\\Resources\\Image\\Player\\Es\\DAttack");
+		at->CreateAnimationFolder(L"AAttack", L"..\\Resources\\Image\\Player\\Es\\AAttack", Vector2(0.0f, 0.0f), 0.05f);
+		at->CreateAnimationFolder(L"BAttack", L"..\\Resources\\Image\\Player\\Es\\BAttack", Vector2(0.0f, 0.0f), 0.05f);
+		at->CreateAnimationFolder(L"CAttack", L"..\\Resources\\Image\\Player\\Es\\CAttack", Vector2(0.0f, 0.0f), 0.05f);
+		at->CreateAnimationFolder(L"DAttack", L"..\\Resources\\Image\\Player\\Es\\DAttack", Vector2(0.0f, 0.0f), 0.05f);
 
 		Texture* Battack = Resources::Load<Texture>(L"BAttackSheet"
 			, L"..\\Resources\\Image\\Player\\Es\\Battacksheet\\Battack.bmp");
 
 
 
-		at->CreateAnimation(L"BAttackS", Battack, Vector2(0.0f, 0.0f), Vector2(600.0f, 800.0f), 11);
+		at->CreateAnimation(L"BAttackS", Battack, Vector2(0.0f, 0.0f), Vector2(600.0f, 800.0f), 11, Vector2(0.0f, 0.0f), 0.05f);
 
 
 		at->PlayAnimation(L"PlayerIdle", true);
@@ -104,7 +104,7 @@ namespace BB
 
 
 
-		//MAI 무브셋.%
+		//Bullet 무브셋.%
 		Animator* at2 = Em->AddComponent<Animator>();
 		at2->CreateAnimationFolder(L"EnemyIdle", L"..\\Resources\\Image\\Player\\Bullet\\Standing");
 		at2->CreateAnimationFolder(L"BackMoveE", L"..\\Resources\\Image\\Player\\Bullet\\BackMove");
@@ -112,6 +112,13 @@ namespace BB
 		at2->CreateAnimationFolder(L"DownMoveE", L"..\\Resources\\Image\\Player\\Bullet\\DownMove", Vector2(0.0f, 50.0f));
 		at2->PlayAnimation(L"EnemyIdle", true);
 		at2->SetAffectedCamera(true);
+
+		at2->CreateAnimationFolder(L"AAttackE", L"..\\Resources\\Image\\Player\\Bullet\\AAttack", Vector2(0.0f, 0.0f), 0.02f);
+		at2->CreateAnimationFolder(L"BAttackE", L"..\\Resources\\Image\\Player\\Bullet\\BAttack",Vector2(0.0f, 10.0f), 0.02f);
+		at2->CreateAnimationFolder(L"CAttackE", L"..\\Resources\\Image\\Player\\Bullet\\CAttack",Vector2(0.0f, 10.0f), 0.02f);
+		at2->CreateAnimationFolder(L"DAttackE", L"..\\Resources\\Image\\Player\\Bullet\\DAttack");
+
+		at2->CreateAnimationFolder(L"DAAttackE", L"..\\Resources\\Image\\Player\\Bullet\\DAAttack",Vector2(0.0f, 10.0f), 0.02f);
 
 
 		//Animator* at = player->AddComponent<Animator>();

@@ -13,6 +13,7 @@ namespace BB
 			Attack,
 			Hit,
 			Jump,
+			Sit,
 			End,
 		};
 
@@ -30,6 +31,7 @@ namespace BB
 		void Attack();
 		void Hit();
 		void Jump();
+		void Sit();
 
 
 	private:
